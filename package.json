@@ -4,18 +4,22 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "webpack-dev-server --port=4200",
+    "startdev": "webpack-dev-server --port=4200",
+    "start": "node server.js",
     "build": "webpack",
     "test": "karma start ./karma.conf.js",
     "lint": "ng lint",
     "e2e": "protractor ./protractor.conf.js",
-    "pree2e": "webdriver-manager update --standalone false --gecko false --quiet"
+    "pree2e": "webdriver-manager update --standalone false --gecko false --quiet",
+    "postinstall": "webpack"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.2.0",
+    "@angular/cli": "^1.7.4",
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",
+    "@angular/compiler-cli": "^5.2.10",
     "@angular/core": "^5.2.0",
     "@angular/forms": "^5.2.0",
     "@angular/http": "^5.2.0",
@@ -28,14 +32,15 @@
     "angular-font-awesome": "^3.1.2",
     "bootstrap": "^4.1.0",
     "core-js": "^2.4.1",
+    "express": "^4.16.3",
     "font-awesome": "^4.7.0",
     "rxjs": "^5.5.6",
+    "typescript": "~2.5.3",
+    "webpack": "~3.11.0",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
     "@angular-devkit/core": "0.3.2",
-    "@angular/cli": "~1.7.4",
-    "@angular/compiler-cli": "^5.2.0",
     "@angular/language-service": "^5.2.0",
     "@ngtools/webpack": "1.10.2",
     "@types/jasmine": "~2.8.3",
@@ -66,10 +71,8 @@
     "stylus-loader": "^3.0.1",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
-    "typescript": "~2.5.3",
     "uglifyjs-webpack-plugin": "^1.1.8",
     "url-loader": "^0.6.2",
-    "webpack": "~3.11.0",
     "webpack-dev-server": "~2.11.0"
   }
 }
